@@ -34,44 +34,89 @@ const ProfileCard = () => {
             color: "#008b8b",
             fontWeight: 600,
             textDecoration: "underline",
+            fontSize: { md: "1.8em", xs: "1.5em" },
           }}
           m={1}
         >
           Personal Details
         </Typography>
-        <Container maxWidth="lg" sx={{ display: "flex" }}>
+        <Container
+          maxWidth="lg"
+          sx={{
+            display: "flex",
+            flexDirection: {
+              md: "row",
+              xs: "column",
+            },
+          }}
+        >
           <Box
-            p={2}
+            mt={1}
+            mb={1}
             sx={{
-              width: "30%",
+              width: {
+                md: "30%",
+                xs: "100%",
+              },
               background: "url(../images/profile-pic.png)",
               backgroundSize: "contain",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
-              height: "300px",
+              height: {
+                md: "300px",
+                xs: "150px",
+              },
             }}
           ></Box>
 
           <Box
-            p={2}
+            mt={1}
+            mb={1}
             sx={{
-              width: "70%",
+              width: {
+                md: "70%",
+                xs: "100%",
+              },
               backgroundColor: "#dcdcdc",
-              height: "300px",
+              height: { md: "300px", xs: "fit-content" },
               borderRadius: 2,
               border: "1px solid #000",
             }}
           >
             {details.map((detail) => {
               return (
-                <Box m={1} sx={{ display: "flex", flexGrow: 1 }}>
+                <Box
+                  m={1}
+                  sx={{
+                    display: "flex",
+                    flexDirection: {
+                      sm: "row",
+                      xs: "column",
+                    },
+                    flexGrow: 1,
+                  }}
+                >
                   <Typography
-                    sx={{ fontWeight: 700, fontSize: "1.2em", width: "20%" }}
+                    sx={{
+                      fontWeight: 700,
+                      fontSize: {
+                        md: "1.2em",
+                        xs: "1em",
+                      },
+                      width: "20%",
+                    }}
                   >
                     {detail.key}
                   </Typography>{" "}
                   <Typography
-                    sx={{ fontWeight: 550, fontSize: "1.2em", width: "80%" }}
+                    sx={{
+                      fontWeight: 550,
+                      fontSize: {
+                        md: "1.2em",
+                        xs: "1em",
+                      },
+                      width: "80%",
+                    }}
                   >
                     {detail.value}
                   </Typography>

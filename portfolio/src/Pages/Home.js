@@ -16,7 +16,7 @@ const Home = () => {
         maxWidth={"lg"}
         sx={{
           minHeight: "100vh",
-          backgroundColor: "#f5fffa",
+          backgroundColor: "#b9f2ff",
           marginTop: "6em",
           padding: "2em 0",
         }}

@@ -12,23 +12,20 @@ import {
 } from "@mui/material";
 
 const columns = [
-  { id: "exam", label: "Examination", minWidth: 200, align: "center" },
+  { id: "exam", label: "Examination", align: "center" },
   {
     id: "univ",
     label: "Board/University",
-    minWidth: 200,
     align: "center",
   },
   {
     id: "year",
     label: "Year",
-    minWidth: 200,
     align: "center",
   },
   {
     id: "cgpa",
     label: "CGPA (Scale of 10)",
-    minWidth: 200,
     align: "center",
   },
 ];
@@ -53,8 +50,9 @@ export default function EducationTable() {
           color: "#008b8b",
           fontWeight: 600,
           textDecoration: "underline",
+          fontSize: { md: "1.8em", xs: "1.5em" },
         }}
-        m={1}
+        m={2}
       >
         Education Details
       </Typography>
