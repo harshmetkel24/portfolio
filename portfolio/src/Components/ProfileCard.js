@@ -58,13 +58,26 @@ const ProfileCard = () => {
                 md: "30%",
                 xs: "100%",
               },
-              background: "url(../images/profile-pic.png)",
-              backgroundSize: "contain",
+              background: "url(/images/profile-img.png)",
+              backgroundSize: {
+                md: "cover",
+                xs: "contain",
+              },
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
+              borderTopLeftRadius: 4,
+              borderBottomLeftRadius: 4,
               height: {
                 md: "300px",
-                xs: "150px",
+                xs: "180px",
+              },
+              border: {
+                md: "1px solid black",
+                xs: "none",
+              },
+              borderRight: {
+                md: "none",
+                xs: "none",
               },
             }}
           ></Box>
@@ -79,8 +92,15 @@ const ProfileCard = () => {
               },
               backgroundColor: "#dcdcdc",
               height: { md: "300px", xs: "fit-content" },
-              borderRadius: 2,
-              border: "1px solid #000",
+              borderTopRightRadius: 4,
+              borderBottomRightRadius: 4,
+              borderTopLeftRadius: { md: 0, xs: 4 },
+              borderBottomLeftRadius: { md: 0, xs: 4 },
+              border: "1px solid black",
+              borderLeft: {
+                md: "none",
+                xs: "1px solid black",
+              },
             }}
           >
             {details.map((detail) => {
