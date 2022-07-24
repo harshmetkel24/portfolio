@@ -49,7 +49,6 @@ export default function EducationTable() {
           textAlign: "center",
           color: "#008b8b",
           fontWeight: 600,
-          textDecoration: "underline",
           fontSize: { md: "1.8em", xs: "1.5em" },
         }}
         m={2}

@@ -33,10 +33,9 @@ const ProfileCard = () => {
             textAlign: "center",
             color: "#008b8b",
             fontWeight: 600,
-            textDecoration: "underline",
             fontSize: { md: "1.8em", xs: "1.5em" },
+            m: 1,
           }}
-          m={1}
         >
           Personal Details
         </Typography>
@@ -51,9 +50,8 @@ const ProfileCard = () => {
           }}
         >
           <Box
-            mt={1}
-            mb={1}
             sx={{
+              my: 1,
               width: {
                 md: "30%",
                 xs: "100%",
@@ -72,7 +70,7 @@ const ProfileCard = () => {
                 xs: "180px",
               },
               border: {
-                md: "1px solid black",
+                md: "4px solid black",
                 xs: "none",
               },
               borderRight: {
@@ -83,9 +81,8 @@ const ProfileCard = () => {
           ></Box>
 
           <Box
-            mt={1}
-            mb={1}
             sx={{
+              my: 1,
               width: {
                 md: "70%",
                 xs: "100%",
@@ -96,10 +93,10 @@ const ProfileCard = () => {
               borderBottomRightRadius: 4,
               borderTopLeftRadius: { md: 0, xs: 4 },
               borderBottomLeftRadius: { md: 0, xs: 4 },
-              border: "1px solid black",
+              border: "4px solid black",
               borderLeft: {
                 md: "none",
-                xs: "1px solid black",
+                xs: "4px solid black",
               },
             }}
           >
@@ -118,12 +115,13 @@ const ProfileCard = () => {
                 >
                   <Typography
                     sx={{
-                      fontWeight: 700,
+                      fontWeight: 600,
                       fontSize: {
                         md: "1.2em",
                         xs: "1em",
                       },
                       width: "20%",
+                      color: "#444",
                     }}
                   >
                     {detail.key}
@@ -131,6 +129,7 @@ const ProfileCard = () => {
                   <Typography
                     sx={{
                       fontWeight: 550,
+                      color: "#111",
                       fontSize: {
                         md: "1.2em",
                         xs: "1em",

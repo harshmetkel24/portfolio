@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 
 import {
   AppBar,
@@ -8,16 +9,27 @@ import {
   Typography,
   Menu,
   Container,
-  Avatar,
   Button,
-  Tooltip,
   MenuItem,
 } from "@mui/material/";
 
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 
-const pages = ["Projects", "Contributions", "Blog"];
+const pages = [
+  {
+    label: "Projects",
+    src: "/projects",
+  },
+  {
+    label: "Contributions",
+    src: "/contributions",
+  },
+  {
+    label: "Blog",
+    src: "/blog",
+  },
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Navbar = () => {
@@ -44,18 +56,16 @@ const Navbar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
-            href="a"
-            component="a"
             variant="h6"
             sx={{
               mr: 2,
               display: { md: "flex", xs: "none" },
+              color: "#008b8b",
+              textDecoration: "none",
               fontFamily: "monospace",
               alignItems: "center",
               fontWeight: 700,
               letterSpacing: ".1rem",
-              color: "#008b8b",
-              textDecoration: "none",
             }}
           >
             <AccountBoxIcon
@@ -64,7 +74,20 @@ const Navbar = () => {
                 mr: 1,
               }}
             />
-            harshmetkel24
+            <Link
+              style={{
+                display: "flex",
+                color: "#008b8b",
+                textDecoration: "none",
+                fontFamily: "monospace",
+                alignItems: "center",
+                fontWeight: 700,
+                letterSpacing: ".1rem",
+              }}
+              to="/"
+            >
+              harshmetkel24
+            </Link>
           </Typography>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -97,15 +120,25 @@ const Navbar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
+                  <Button textAlign="center">
+                    <Link
+                      style={{
+                        textDecoration: "none",
+                        color: "#333",
+                        fontSize: "0.9em",
+                        fontWeight: 550,
+                      }}
+                      to={page.src}
+                    >
+                      {page.label}
+                    </Link>
+                  </Button>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
           <Typography
-            href="a"
-            component="a"
             variant="h6"
             flexGrow={1}
             sx={{
@@ -119,7 +152,7 @@ const Navbar = () => {
               color: "#008b8b",
               textDecoration: "none",
               letterSpacing: "0.08em",
-              fontSize: "1em",
+              fontSize: "1.2em",
             }}
           >
             <AccountBoxIcon
@@ -129,17 +162,38 @@ const Navbar = () => {
                 fontSize: "1.5em",
               }}
             />
-            harshmetkel24
+            <Link
+              style={{
+                display: "flex",
+                color: "#008b8b",
+                textDecoration: "none",
+                fontFamily: "monospace",
+                alignItems: "center",
+                fontWeight: 700,
+                letterSpacing: ".1rem",
+              }}
+              to="/"
+            >
+              harshmetkel24
+            </Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={page.label}
                 sx={{ my: 2, color: "black", display: "block" }}
               >
-                {page}
+                <Link
+                  style={{
+                    textDecoration: "none",
+                    color: "#333",
+                    fontWeight: 600,
+                  }}
+                  to={page.src}
+                >
+                  {page.label}
+                </Link>
               </Button>
             ))}
           </Box>

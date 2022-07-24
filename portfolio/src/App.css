@@ -1,5 +1,35 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap");
 
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: "M PLUS 1p", sans-serif;
+}
+
+[data-full],
+.normal {
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+  cursor: help;
+  margin: 0.5em 0;
+}
+
+[data-full]:hover::before {
+  content: attr(data-full);
+  position: absolute;
+  z-index: 2;
+  bottom: -2.5em;
+  padding: 0.2em;
+  text-align: justify;
+  border-radius: 4px;
+  background: #333;
+  color: #fff;
+  font-size: 10px;
+}
+[data-full]:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5em;
+  left: 8px;
+  border: 8px solid transparent;
+  border-bottom: 8px solid #000;
 }

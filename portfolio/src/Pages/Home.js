@@ -16,9 +16,11 @@ const Home = () => {
         maxWidth={"lg"}
         sx={{
           minHeight: "100vh",
-          backgroundColor: "#b9f2ff",
+          backgroundColor: "#008b8b",
           marginTop: "6em",
+          marginBottom: "2em",
           padding: "2em 0",
+          borderRadius: 2,
         }}
       >
         <ProfileCard />
