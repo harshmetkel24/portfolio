@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 
+import { makeStyles } from "@mui/styles/";
+
 import {
   AppBar,
   Box,
@@ -14,7 +16,6 @@ import {
 } from "@mui/material/";
 
 import MenuIcon from "@mui/icons-material/Menu";
-import AccountBoxIcon from "@mui/icons-material/AccountBox";
 
 const pages = [
   {
@@ -22,17 +23,25 @@ const pages = [
     src: "/projects",
   },
   {
-    label: "Contributions",
+    label: "My Contributions",
     src: "/contributions",
   },
   {
-    label: "Blog",
-    src: "/blog",
+    label: "Contact Me",
+    src: "/contact",
   },
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+
+const useStyles = makeStyles((theme) => ({
+  menu: {
+    "& .MuiPaper-root": {
+      backgroundColor: "#444",
+    },
+  },
+}));
 
 const Navbar = () => {
+  const classes = useStyles();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -52,7 +61,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar sx={{ backgroundColor: "#dcdcdc" }} position="fixed">
+    <AppBar sx={{ backgroundColor: "#222" }} position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -68,16 +77,10 @@ const Navbar = () => {
               letterSpacing: ".1rem",
             }}
           >
-            <AccountBoxIcon
-              sx={{
-                display: { xs: "none", md: "flex" },
-                mr: 1,
-              }}
-            />
             <Link
               style={{
                 display: "flex",
-                color: "#008b8b",
+                color: "whitesmoke",
                 textDecoration: "none",
                 fontFamily: "monospace",
                 alignItems: "center",
@@ -90,7 +93,11 @@ const Navbar = () => {
             </Link>
           </Typography>
 
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+          <Box
+            sx={{
+              display: { xs: "flex", md: "none" },
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -99,9 +106,10 @@ const Navbar = () => {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon sx={{ color: "black", ml: 0 }} />
+              <MenuIcon sx={{ color: "whitesmoke", ml: 0 }} />
             </IconButton>
             <Menu
+              className={classes.menu}
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -121,13 +129,13 @@ const Navbar = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page.label} onClick={handleCloseNavMenu}>
-                  <Button textAlign="center">
+                  <Button sx={{ width: "100%" }}>
                     <Link
                       style={{
                         textDecoration: "none",
-                        color: "#333",
-                        fontSize: "0.9em",
-                        fontWeight: 550,
+                        color: "whitesmoke",
+                        fontSize: "0.8em",
+                        fontWeight: 600,
                       }}
                       to={page.src}
                     >
@@ -155,22 +163,14 @@ const Navbar = () => {
               fontSize: "1.2em",
             }}
           >
-            <AccountBoxIcon
-              sx={{
-                mr: 1,
-                alignItems: "center",
-                fontSize: "1.5em",
-              }}
-            />
             <Link
               style={{
-                display: "flex",
-                color: "#008b8b",
+                color: "whitesmoke",
                 textDecoration: "none",
                 fontFamily: "monospace",
                 alignItems: "center",
                 fontWeight: 700,
-                letterSpacing: ".1rem",
+                letterSpacing: ".15rem",
               }}
               to="/"
             >
@@ -182,13 +182,33 @@ const Navbar = () => {
             {pages.map((page) => (
               <Button
                 key={page.label}
-                sx={{ my: 2, color: "black", display: "block" }}
+                sx={{
+                  my: 2,
+                  mx: 1,
+                  color: "black",
+                  display: "block",
+                  color: "#fff",
+                  borderRadius: 2,
+                  transition: "all 0.25s ease",
+                  fontWeight: 800,
+                  "& a": {
+                    color: "#fff",
+                  },
+                  "&:hover a": {
+                    color: "#333",
+                  },
+                  "&:hover": {
+                    transform: "scale(1.1)",
+                    backgroundColor: "#e0ffff",
+                    boxShadow: "inset 0px 1px 16px 2px #00ffef",
+                  },
+                }}
               >
                 <Link
                   style={{
                     textDecoration: "none",
-                    color: "#333",
-                    fontWeight: 600,
+                    fontWeight: 700,
+                    transition: "all 0.5s ease",
                   }}
                   to={page.src}
                 >

@@ -2,17 +2,29 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { Container, Grid, Box, Typography, Button } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 import Navbar from "../Components/Navbar";
 
+const useStyles = makeStyles((theme) => ({
+  allText: {
+    fontWeight: "600 !important",
+    color: "#fff",
+    fontFamily: "inherit !important",
+    fontSize: "1em !important",
+  },
+}));
+
 const Projects = () => {
+  const classes = useStyles();
   const [data, setData] = useState([]);
   const getData = async () => {
     const res = await fetch("https://api.github.com/users/harshmetkel24/repos");
     setData(await res.json());
   };
   useEffect(() => {
+    document.title = "Project | harshmetkel24";
     getData();
   }, []);
 
@@ -23,14 +35,18 @@ const Projects = () => {
         maxWidth={"lg"}
         sx={{
           minHeight: "100vh",
-          backgroundColor: "#c9ffe5",
+          backgroundColor: "#080808",
           marginTop: "6em",
           marginBottom: "2em",
           padding: "2em 0",
           borderRadius: 2,
+          width: {
+            xs: "90vw",
+          },
         }}
       >
-        <Grid container spacing={2}>
+        <Grid container spacing={1}>
+          {/* prject cards */}
           {data.map((elem) => {
             return (
               <Grid item xs={12} md={6} lg={4} key={elem.id}>
@@ -38,43 +54,68 @@ const Projects = () => {
                   sx={{
                     display: "flex",
                     flexDirection: "column",
-                    minHeight: 150,
-                    backgroundColor: "#dcdcdc",
+                    height: {
+                      sm: 150,
+                      xs: "fit-content",
+                    },
+                    m: 2,
+                    backgroundColor: "#004242",
                     p: 2,
-                    border: 3,
                     borderRadius: 2,
-                    boxShadow: 3,
+                    transition: ".5s ease-in-out",
+                    "&:hover": {
+                      boxShadow: "inset 0px 2px 8px 1px #007fff",
+                      transform: "scale(1.05)",
+                      backgroundColor: "#002147",
+                    },
                   }}
                 >
-                  <Box display="flex" flexGrow={1}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexGrow: 1,
+                      flexDirection: { sm: "row", xs: "column" },
+                    }}
+                  >
                     <Typography
                       variant="body2"
                       gutterBottom
-                      sx={{ width: "25%", fontWeight: 600 }}
+                      className={classes.allText}
                     >
-                      Ttile:
-                    </Typography>
-                    <Typography variant="body2" gutterBottom>
                       {elem.name}
                     </Typography>
                   </Box>
                   {elem.description &&
-                    (elem.description.length >= 70 ? (
-                      <div data-full={elem.description}>
-                        {`${String(elem.description).substr(0, 70)}...`}
+                    (elem.description.length >= 50 ? (
+                      <div
+                        // className={classes.allText}
+                        data-full={elem.description}
+                      >
+                        {`${String(elem.description).substr(0, 50)}...`}
                       </div>
                     ) : (
                       <div className="normal">{elem.description}</div>
                     ))}
-                  <Box display="flex" flexGrow={1}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexGrow: 1,
+                      flexDirection: { sm: "row", xs: "column" },
+                    }}
+                  >
                     <Typography
                       variant="body2"
                       gutterBottom
-                      sx={{ width: "25%", fontWeight: 600 }}
+                      sx={{ width: "25%" }}
+                      className={classes.allText}
                     >
                       Language:
                     </Typography>
-                    <Typography variant="body2" gutterBottom>
+                    <Typography
+                      variant="body2"
+                      gutterBottom
+                      className={classes.allText}
+                    >
                       {elem.language}
                     </Typography>
                   </Box>
@@ -86,6 +127,9 @@ const Projects = () => {
                     }}
                   >
                     <Button
+                      component="a"
+                      href={elem.html_url}
+                      target="_blank"
                       variant="contained"
                       size="small"
                       sx={{
@@ -93,17 +137,13 @@ const Projects = () => {
                       }}
                       startIcon={<GitHubIcon />}
                     >
-                      <Link
-                        style={{ textDecoration: "none", color: "#222" }}
-                        to={elem.html_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Github
-                      </Link>
+                      Github
                     </Button>
                     {elem.homepage && (
                       <Button
+                        component="a"
+                        href={elem.homepage}
+                        target="_blank"
                         variant="contained"
                         size="small"
                         sx={{
@@ -111,13 +151,7 @@ const Projects = () => {
                         }}
                         startIcon={<GitHubIcon />}
                       >
-                        <Link
-                          style={{ textDecoration: "none", color: "#222" }}
-                          to={elem.homepage}
-                          target="_blank"
-                        >
-                          Live Project
-                        </Link>
+                        Live Project
                       </Button>
                     )}
                   </Box>

@@ -11,6 +11,8 @@ import {
   TableRow,
 } from "@mui/material";
 
+import SchoolIcon from "@mui/icons-material/School";
+
 const columns = [
   { id: "exam", label: "Examination", align: "center" },
   {
@@ -42,17 +44,26 @@ const rows = [
 
 export default function EducationTable() {
   return (
-    <Paper sx={{ width: "100%", overflow: "hidden", margin: "2em 0" }}>
+    <Paper
+      sx={{
+        width: "100%",
+        overflow: "hidden",
+        my: 2,
+        backgroundColor: "#1b1b1b",
+      }}
+    >
       <Typography
         variant="h4"
         sx={{
+          py: 1,
           textAlign: "center",
-          color: "#008b8b",
-          fontWeight: 600,
-          fontSize: { md: "1.8em", xs: "1.5em" },
+          color: "whitesmoke",
+          fontFamily: "inherit",
+          fontWeight: 700,
+          fontSize: { md: "2em", xs: "1.5em" },
         }}
-        m={2}
       >
+        <SchoolIcon sx={{ mx: 1, color: "#48d1cc" }} />
         Education Details
       </Typography>
       <TableContainer sx={{ maxHeight: 440 }}>
@@ -65,8 +76,11 @@ export default function EducationTable() {
                   align={column.align}
                   style={{
                     minWidth: column.minWidth,
-                    backgroundColor: "#dcdcdc",
-                    fontWeight: 600,
+                    backgroundColor: "#333",
+                    fontFamily: "inherit",
+                    color: "whitesmoke",
+                    fontSize: 20,
+                    fontWeight: 700,
                   }}
                 >
                   {column.label}
@@ -81,7 +95,16 @@ export default function EducationTable() {
                   {columns.map((column) => {
                     const value = row[column.id];
                     return (
-                      <TableCell key={column.id} align={column.align}>
+                      <TableCell
+                        sx={{
+                          fontFamily: "inherit",
+                          color: "whitesmoke",
+                          fontSize: 15,
+                          fontWeight: 700,
+                        }}
+                        key={column.id}
+                        align={column.align}
+                      >
                         {column.format && typeof value === "number"
                           ? column.format(value)
                           : value}

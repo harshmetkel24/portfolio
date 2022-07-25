@@ -1,10 +1,11 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 // pages
 import Home from "./Pages/Home";
 import Projects from "./Pages/Projects";
 import Contributions from "./Pages/Contributions";
-import Blog from "./Pages/Blog";
+import ContactMe from "./Pages/ContactMe";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contributions" element={<Contributions />} />
-        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<ContactMe />} />
       </Routes>
     </BrowserRouter>
   );

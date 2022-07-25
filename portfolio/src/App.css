@@ -1,16 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700;800&display=swap");
 
 * {
-  font-family: "M PLUS 1p", sans-serif;
+  font-family: "Cormorant Garamond", serif;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+body {
+  background: #667db6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #667db6,
+    #0082c8,
+    #0082c8,
+    #667db6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #667db6,
+    #0082c8,
+    #0082c8,
+    #667db6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 [data-full],
 .normal {
-  font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   position: relative;
   cursor: help;
   margin: 0.5em 0;
+  color: #fff;
 }
 
 [data-full]:hover::before {
@@ -18,12 +40,13 @@
   position: absolute;
   z-index: 2;
   bottom: -2.5em;
-  padding: 0.2em;
+  padding: 4px;
   text-align: justify;
   border-radius: 4px;
   background: #333;
   color: #fff;
-  font-size: 10px;
+  font-size: 12px;
+  border: 1px solid white;
 }
 [data-full]:hover::after {
   content: "";

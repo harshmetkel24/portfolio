@@ -3,6 +3,8 @@ import React from "react";
 import { Box, Container } from "@mui/system";
 import { Typography, Paper } from "@mui/material";
 
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
+
 const details = [
   { key: "Name: ", value: "Harshkumar Metkel" },
   {
@@ -26,17 +28,19 @@ const details = [
 const ProfileCard = () => {
   return (
     <>
-      <Paper sx={{ padding: "1em", marginBottom: "2em" }}>
+      <Paper sx={{ padding: "0.5em", backgroundColor: "#080808" }}>
         <Typography
           variant="h4"
           sx={{
             textAlign: "center",
-            color: "#008b8b",
-            fontWeight: 600,
-            fontSize: { md: "1.8em", xs: "1.5em" },
-            m: 1,
+            color: "whitesmoke",
+            fontWeight: 700,
+            fontSize: { md: "2em", xs: "1.5em" },
+            mb: 1,
+            fontFamily: "inherit",
           }}
         >
+          <AccountBoxIcon sx={{ mx: 1, color: "#48d1cc" }} />
           Personal Details
         </Typography>
         <Container
@@ -50,54 +54,52 @@ const ProfileCard = () => {
           }}
         >
           <Box
+            component="img"
+            src="/images/profile-img.png"
             sx={{
-              my: 1,
+              mb: 1,
               width: {
                 md: "30%",
                 xs: "100%",
               },
-              background: "url(/images/profile-img.png)",
-              backgroundSize: {
-                md: "cover",
-                xs: "contain",
-              },
+              background: "#343434",
+              objectFit: "cover",
+              fontFamily: "inherit",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
               borderTopLeftRadius: 4,
               borderBottomLeftRadius: 4,
+              borderTopRightRadius: {
+                md: 0,
+                xs: 4,
+              },
+              borderBottomRightRadius: {
+                md: 0,
+                xs: 4,
+              },
               height: {
-                md: "300px",
-                xs: "180px",
-              },
-              border: {
-                md: "4px solid black",
-                xs: "none",
-              },
-              borderRight: {
-                md: "none",
-                xs: "none",
+                md: "320px",
+                xs: "fit-content",
               },
             }}
           ></Box>
 
           <Box
             sx={{
-              my: 1,
+              px: {
+                md: 2,
+                xs: 0,
+              },
               width: {
                 md: "70%",
                 xs: "100%",
               },
-              backgroundColor: "#dcdcdc",
-              height: { md: "300px", xs: "fit-content" },
+              backgroundColor: "#1b1b1b",
+              height: { md: "320px", xs: "fit-content" },
               borderTopRightRadius: 4,
               borderBottomRightRadius: 4,
               borderTopLeftRadius: { md: 0, xs: 4 },
               borderBottomLeftRadius: { md: 0, xs: 4 },
-              border: "4px solid black",
-              borderLeft: {
-                md: "none",
-                xs: "4px solid black",
-              },
             }}
           >
             {details.map((detail) => {
@@ -115,26 +117,28 @@ const ProfileCard = () => {
                 >
                   <Typography
                     sx={{
-                      fontWeight: 600,
+                      fontWeight: 700,
                       fontSize: {
-                        md: "1.2em",
-                        xs: "1em",
+                        md: "1.3em",
+                        xs: "1.1em",
                       },
                       width: "20%",
-                      color: "#444",
+                      color: "whitesmoke",
+                      fontFamily: "inherit",
                     }}
                   >
                     {detail.key}
-                  </Typography>{" "}
+                  </Typography>
                   <Typography
                     sx={{
-                      fontWeight: 550,
-                      color: "#111",
+                      fontWeight: 700,
+                      color: "white",
                       fontSize: {
-                        md: "1.2em",
-                        xs: "1em",
+                        md: "1.3em",
+                        xs: "1.1em",
                       },
                       width: "80%",
+                      fontFamily: "inherit",
                     }}
                   >
                     {detail.value}
