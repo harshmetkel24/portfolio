@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -37,7 +37,9 @@ app.post("/send", (req, res) => {
     from: `${req.body.mailerState.email}`,
     to: process.env.EMAIL,
     subject: `Message from: ${req.body.mailerState.name}`,
-    text: `${req.body.mailerState.message}`,
+    text: `${req.body.mailerState.message}
+      
+      Can revert back to me at: ${req.body.mailerState.email}`,
   };
 
   transporter.sendMail(mailOptions, (error, data) => {
@@ -49,6 +51,15 @@ app.post("/send", (req, res) => {
     }
   });
 });
+
+if (process.env.NODE_ENV == "production") {
+  const path = require("path");
+
+  app.get("/", function (req, res) {
+    app.use(express.static(path.resolve(__dirname, "portfolio", "build")));
+    res.sendFile(path.resolve(__dirname, "portfolio", "build", "index.html"));
+  });
+}
 
 app.listen(port, () => {
   console.log(`The server is listening on PORT: ${port}`);

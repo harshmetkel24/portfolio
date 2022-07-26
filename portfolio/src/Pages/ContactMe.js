@@ -12,8 +12,7 @@ import TypeWriter from "typewriter-effect";
 import GraphemeSplitter from "grapheme-splitter";
 
 const list = [
-  "🙋🏽‍♂️ this is harshmetkel24",
-  "I ❤ to design Websites",
+  "🙋🏽‍♂️ this side harshmetkel24",
   "Like My Work?",
   "Then do Contact Me👋🏽",
 ];
@@ -34,8 +33,7 @@ const ContactMe = () => {
 
   const sendEmail = async (e) => {
     e.preventDefault();
-    console.log({ mailerState });
-    const res = await fetch("http://localhost:4000/send", {
+    const res = await fetch(`http://localhost:3001/send`, {
       method: "post",
       headers: {
         "Content-type": "application/json",
@@ -46,7 +44,6 @@ const ContactMe = () => {
       .then(async (res) => {
         // get the response from transporter.sendEmail to see if success or not
         const resData = await res;
-        console.log(resData);
         if (resData.status === "success") {
           alert("Your message is sent Successfully🤝🏽");
         } else {
