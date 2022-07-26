@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 import { Container, Grid, Box, Typography, Button } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import LiveTvIcon from "@mui/icons-material/LiveTv";
 
 import Navbar from "../Components/Navbar";
 
@@ -141,19 +141,23 @@ const Projects = () => {
                     </Button>
                     {elem.homepage && (
                       <Button
-                        component="a"
-                        href={elem.homepage}
+                        href={
+                          String(elem.homepage).substr(0, 5) === "https"
+                            ? elem.homepage
+                            : "https://" + elem.homepage
+                        }
                         target="_blank"
                         variant="contained"
                         size="small"
                         sx={{
                           textTransform: "capitalize",
                         }}
-                        startIcon={<GitHubIcon />}
+                        startIcon={<LiveTvIcon />}
                       >
                         Live Project
                       </Button>
                     )}
+                    {console.log(elem.homepage)}
                   </Box>
                 </Box>
               </Grid>

@@ -56,3 +56,37 @@ body {
   border: 8px solid transparent;
   border-bottom: 8px solid #000;
 }
+
+/* typerwriter cursur styling */
+.Typewriter__cursor {
+  color: orange;
+}
+
+@keyframes text {
+  0% {
+    color: #00ffff;
+  }
+  40% {
+    color: #ff1dce;
+  }
+  50% {
+    color: #ff1493;
+  }
+  70% {
+    color: #fd3f92;
+  }
+  100% {
+    color: #ace5ee;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
