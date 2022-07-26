@@ -12,6 +12,20 @@ app.use(cors());
 
 const port = process.env.PORT || 4000;
 
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "DELETE, PUT");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  if ("OPTIONS" == req.method) {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+});
+
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -52,7 +66,7 @@ app.post("/send", (req, res) => {
   });
 });
 
-if (process.env.NODE_ENV == "production") {
+if (process.env.NODE_ENV === "production") {
   const path = require("path");
 
   app.get("/", function (req, res) {

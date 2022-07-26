@@ -33,7 +33,11 @@ const ContactMe = () => {
 
   const sendEmail = async (e) => {
     e.preventDefault();
-    const res = await fetch(`http://localhost:3001/send`, {
+    const url =
+      process.env.NODE_ENV === "production"
+        ? "/send/"
+        : "http://localhost:3001/send/";
+    const res = await fetch(url, {
       method: "post",
       headers: {
         "Content-type": "application/json",
@@ -45,10 +49,10 @@ const ContactMe = () => {
         // get the response from transporter.sendEmail to see if success or not
         const resData = await res;
         if (resData.status === "success") {
-          alert("Your message is sent Successfully🤝🏽");
+          alert("Your message is sent Successfully🤝🏽.");
         } else {
           alert(
-            "some error occured while sending your message. Please try again after a while. Inconvineince caused is regretted🙇🏽‍♂️"
+            "some error occured while sending your message. Please try again after a while. Inconvineince caused is regretted🙇🏽‍♂️."
           );
         }
       })
