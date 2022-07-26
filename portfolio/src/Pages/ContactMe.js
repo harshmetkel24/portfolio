@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
 
-import { Container, TextField, Button } from "@mui/material";
+import { Container, TextField, Button, FormControl } from "@mui/material";
 import { Box } from "@mui/system";
 
 import SendIcon from "@mui/icons-material/Send";
@@ -19,6 +19,50 @@ const list = [
 ];
 
 const ContactMe = () => {
+  const [mailerState, setMailerState] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handelStateChange = (event) => {
+    setMailerState((prevState) => ({
+      ...prevState,
+      [event.target.name]: event.target.value,
+    }));
+  };
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    console.log({ mailerState });
+    const res = await fetch("http://localhost:4000/send", {
+      method: "post",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ mailerState }),
+    })
+      .then((res) => res.json())
+      .then(async (res) => {
+        // get the response from transporter.sendEmail to see if success or not
+        const resData = await res;
+        console.log(resData);
+        if (resData.status === "success") {
+          alert("Your message is sent Successfully🤝🏽");
+        } else {
+          alert(
+            "some error occured while sending your message. Please try again after a while. Inconvineince caused is regretted🙇🏽‍♂️"
+          );
+        }
+      })
+      .then(() => {
+        setMailerState({
+          email: "",
+          name: "",
+          message: "",
+        });
+      });
+  };
   return (
     <>
       <Navbar />
@@ -75,7 +119,11 @@ const ContactMe = () => {
             margin: "auto",
           }}
         >
-          <Box sx={{ width: "100%" }}>
+          <FormControl
+            component="form"
+            // onSubmit={sendEmail}
+            sx={{ width: "100%" }}
+          >
             <TextField
               id="outlined-multiline-static"
               label="Name"
@@ -84,6 +132,23 @@ const ContactMe = () => {
               variant="filled"
               color="success"
               fullWidth
+              name="name"
+              onChange={handelStateChange}
+              value={mailerState.name}
+              required
+            />
+            <TextField
+              id="outlined-multiline-static"
+              label="Email"
+              rows={10}
+              placeholder="Please Enter your email address here..."
+              variant="filled"
+              color="success"
+              fullWidth
+              name="email"
+              onChange={handelStateChange}
+              value={mailerState.email}
+              required
             />
             <TextField
               id="outlined-multiline-static"
@@ -94,13 +159,19 @@ const ContactMe = () => {
               variant="filled"
               color="success"
               fullWidth
+              name="message"
+              onChange={handelStateChange}
+              value={mailerState.message}
+              required
             />
-          </Box>
+          </FormControl>
           <Button
+            type="submit"
             color="success"
             variant="contained"
             sx={{ my: 2 }}
             endIcon={<SendIcon />}
+            onClick={sendEmail}
           >
             Send
           </Button>
