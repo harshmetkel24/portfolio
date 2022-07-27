@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 
 import { Container, TextField, Button, FormControl } from "@mui/material";
@@ -23,6 +23,10 @@ const ContactMe = () => {
     email: "",
     message: "",
   });
+
+  useEffect(() => {
+    document.title = "Contact | harshmetkel24";
+  }, []);
 
   const handelStateChange = (event) => {
     setMailerState((prevState) => ({

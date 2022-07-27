@@ -17,7 +17,7 @@ const details = [
     key: "Course: ",
     value: "Information And Communications Technology",
   },
-  { key: "Languages: ", value: "English, Hindi, Gujarati, Telugu" },
+  { key: "Club: ", value: "Accociate member of DSC-DAIICT" },
   { key: "Mobile: ", value: "8128662202" },
   {
     key: "Email: ",
@@ -123,7 +123,7 @@ const ProfileCard = () => {
                         xs: "1.1em",
                       },
                       width: "20%",
-                      color: "whitesmoke",
+                      color: "#c0c0c0",
                       fontFamily: "inherit",
                     }}
                   >

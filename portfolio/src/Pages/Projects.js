@@ -24,7 +24,7 @@ const Projects = () => {
     setData(await res.json());
   };
   useEffect(() => {
-    document.title = "Project | harshmetkel24";
+    document.title = "Projects | harshmetkel24";
     getData();
   }, []);
 

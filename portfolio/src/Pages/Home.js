@@ -7,6 +7,7 @@ import { Divider } from "@mui/material";
 import Navbar from "../Components/Navbar";
 import ProfileCard from "../Components/ProfileCard";
 import EducationTable from "../Components/EducationTable";
+import ExtraDetailsCard from "../Components/ExtraDetailsCard";
 
 const Home = () => {
   useEffect(() => {
@@ -37,6 +38,7 @@ const Home = () => {
           variant="fullWidth"
           sx={{ borderBottomWidth: "0.1em", backgroundColor: "#fff" }}
         />
+        <ExtraDetailsCard />
       </Container>
     </>
   );
