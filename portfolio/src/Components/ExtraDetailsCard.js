@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Paper, Box, Typography, T } from "@mui/material";
+import { Paper, Box, Typography } from "@mui/material";
 import CodeIcon from "@mui/icons-material/Code";
 import HtmlIcon from "@mui/icons-material/Html";
 import CssIcon from "@mui/icons-material/Css";
@@ -9,6 +9,8 @@ import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
+import { Styles } from "./StylesObjects";
+
 const ExtraDetailsCard = () => {
   return (
     <>
@@ -16,36 +18,16 @@ const ExtraDetailsCard = () => {
         sx={{
           display: "flex",
           flexDirection: {
-            md: "row",
+            sm: "row",
             xs: "column",
           },
           backgroundColor: "#080808",
           justifyContent: "center",
         }}
       >
-        <Box
-          sx={{
-            width: {
-              md: "50%",
-              xs: "inherit",
-            },
-            backgroundColor: "#343434",
-            borderRadius: 1,
-            m: 3,
-            p: 1,
-          }}
-        >
-          <Typography
-            component="h3"
-            sx={{
-              fontFamily: "inherit",
-              fontWeight: 600,
-              display: "flex",
-              alighItems: "center",
-              fontSize: "1.5em",
-            }}
-          >
-            <CodeIcon sx={{ fontSize: "1.5em", mx: 1, color: "#48d1cc" }} />
+        <Box sx={Styles.boxStyles}>
+          <Typography component="h3" sx={Styles.headingText}>
+            <CodeIcon sx={Styles.headingIcon} />
             Skills
           </Typography>
           <Typography sx={{ color: "#c0c0c0", mx: 1, fontFamily: "inherit" }}>
@@ -89,114 +71,31 @@ const ExtraDetailsCard = () => {
               src="/images/bootstrap.svg"
             />
           </Typography>
-          <Typography
-            sx={{
-              mx: 1,
-              color: "#c0c0c0",
-              fontFamily: "inherit",
-            }}
-          >
-            Problem Solving
-          </Typography>
-          <Typography
-            sx={{
-              mx: 1,
-              color: "#c0c0c0",
-              fontFamily: "inherit",
-            }}
-          >
+          <Typography sx={Styles.rowText}>Problem Solving</Typography>
+          <Typography sx={Styles.rowText}>
             Interpersonal Communications
           </Typography>
-          <Typography
-            sx={{
-              mx: 1,
-              color: "#c0c0c0",
-              fontFamily: "inherit",
-            }}
-          >
-            Good at working in team
-          </Typography>
+          <Typography sx={Styles.rowText}>Good at working in team</Typography>
         </Box>
-        <Box
-          sx={{
-            displah: "flex",
-            flexDirection: "column",
-            width: {
-              md: "50%",
-              xs: "inherit",
-            },
-          }}
-        >
-          <Box sx={{ backgroundColor: "#343434", borderRadius: 1, p: 1, m: 3 }}>
-            <Typography
-              component="h3"
-              sx={{
-                fontFamily: "inherit",
-                fontWeight: 600,
-                display: "flex",
-                alighItems: "center",
-                fontSize: "1.5em",
-              }}
-            >
-              <EmojiEventsIcon
-                sx={{ fontSize: "1.5em", mx: 1, color: "#48d1cc" }}
-              />
+        <Box sx={Styles.boxStyles}>
+          <Box sx={{ p: 1 }}>
+            <Typography component="h3" sx={Styles.headingText}>
+              <EmojiEventsIcon sx={Styles.headingIcon} />
               Achievements
             </Typography>
-            <Typography
-              sx={{
-                mx: 1,
-                color: "#c0c0c0",
-                fontFamily: "inherit",
-              }}
-            >
+            <Typography sx={Styles.rowText}>
               Runners up in{" "}
               <span style={{ color: "#48d1cc" }}>Winter Of Code 2020-21</span>
             </Typography>
           </Box>
-          <Box sx={{ backgroundColor: "#343434", borderRadius: 1, p: 1, m: 3 }}>
-            <Typography
-              component="h3"
-              sx={{
-                fontFamily: "inherit",
-                fontWeight: 600,
-                display: "flex",
-                alighItems: "center",
-                fontSize: "1.5em",
-              }}
-            >
-              <FitnessCenterIcon
-                sx={{ fontSize: "1.5em", mx: 1, color: "#48d1cc" }}
-              />
+          <Box sx={{ p: 1 }}>
+            <Typography component="h3" sx={Styles.headingText}>
+              <FitnessCenterIcon sx={Styles.headingIcon} />
               Hobbies
             </Typography>
-            <Typography
-              sx={{
-                mx: 1,
-                color: "#c0c0c0",
-                fontFamily: "inherit",
-              }}
-            >
-              Working Out in Gym
-            </Typography>
-            <Typography
-              sx={{
-                mx: 1,
-                color: "#c0c0c0",
-                fontFamily: "inherit",
-              }}
-            >
-              Playing Flute
-            </Typography>
-            <Typography
-              sx={{
-                mx: 1,
-                color: "#c0c0c0",
-                fontFamily: "inherit",
-              }}
-            >
-              Travelling
-            </Typography>
+            <Typography sx={Styles.rowText}>Working Out in Gym</Typography>
+            <Typography sx={Styles.rowText}>Playing Flute</Typography>
+            <Typography sx={Styles.rowText}>Travelling</Typography>
           </Box>
         </Box>
       </Paper>
