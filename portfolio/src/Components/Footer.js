@@ -20,7 +20,14 @@ const Footer = () => {
   return (
     <>
       <Paper elevation={0} sx={{ padding: "0.5em 0" }}>
-        <Box sx={{ margin: "auto", width: "fit-content" }}>
+        <Box
+          sx={{
+            margin: "auto",
+            width: "40%",
+            display: "flex",
+            justifyContent: "space-around",
+          }}
+        >
           <IconButton
             href="https://github.com/harshmetkel24"
             target="_blank"

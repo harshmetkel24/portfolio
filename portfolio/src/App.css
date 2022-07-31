@@ -28,11 +28,12 @@ body {
 
 [data-full],
 .normal {
-  font-weight: 700;
+  font-weight: 600;
   position: relative;
   cursor: help;
   margin: 0.5em 0;
-  color: #fff;
+  color: #d3d3d3;
+  font-size: 0.9em;
 }
 
 [data-full]:hover::before {
