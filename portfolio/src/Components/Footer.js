@@ -1,12 +1,17 @@
 import React from "react";
 
-import { IconButton, Paper } from "@mui/material";
+import { Link } from "react-router-dom";
+
+import { IconButton, Paper, Stack, Button } from "@mui/material";
 import { Box } from "@mui/system";
 
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import HomeIcon from "@mui/icons-material/Home";
+import AccountTreeIcon from "@mui/icons-material/AccountTree";
+import ContactMailIcon from "@mui/icons-material/ContactMail";
 
 const IconStyle = {
   fontSize: "1.5em",
@@ -72,6 +77,27 @@ const Footer = () => {
             <TwitterIcon sx={{ ...IconStyle, color: "#00acee" }} />
           </IconButton>
         </Box>
+        <Stack
+          direction="row"
+          justifyContent="space-around"
+          sx={{ display: { xs: "flex", sm: "none", color: "#fff" } }}
+        >
+          <Link to="/">
+            <Button size="small" startIcon={<HomeIcon />}>
+              Home
+            </Button>
+          </Link>
+          <Link to="/projects">
+            <Button size="small" startIcon={<AccountTreeIcon />}>
+              Projects
+            </Button>
+          </Link>
+          <Link to="/contact">
+            <Button size="small" startIcon={<ContactMailIcon />}>
+              Contact
+            </Button>
+          </Link>
+        </Stack>
       </Paper>
     </>
   );
