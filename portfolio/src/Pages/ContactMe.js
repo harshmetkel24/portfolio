@@ -10,6 +10,7 @@ import SendIcon from "@mui/icons-material/Send";
 import TypeWriter from "typewriter-effect";
 // importing GraphemeSplitter to split emojis as seperate individual characters
 import GraphemeSplitter from "grapheme-splitter";
+import Footer from "../Components/Footer";
 
 const list = [
   "🙋🏽‍♂️ this side harshmetkel24",
@@ -182,6 +183,7 @@ const ContactMe = () => {
           </Button>
         </Box>
       </Container>
+      <Footer />
     </>
   );
 };

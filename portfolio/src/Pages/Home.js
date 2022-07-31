@@ -8,6 +8,7 @@ import Navbar from "../Components/Navbar";
 import ProfileCard from "../Components/ProfileCard";
 import EducationTable from "../Components/EducationTable";
 import ExtraDetailsCard from "../Components/ExtraDetailsCard";
+import Footer from "../Components/Footer";
 
 const Home = () => {
   useEffect(() => {
@@ -40,6 +41,7 @@ const Home = () => {
         />
         <ExtraDetailsCard />
       </Container>
+      <Footer />
     </>
   );
 };

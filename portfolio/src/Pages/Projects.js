@@ -6,6 +6,8 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LiveTvIcon from "@mui/icons-material/LiveTv";
 
 import Navbar from "../Components/Navbar";
+import ScrollToTopButton from "../Components/ScrollToTopButton";
+import Footer from "../Components/Footer";
 
 const useStyles = makeStyles((theme) => ({
   allText: {
@@ -87,10 +89,7 @@ const Projects = () => {
                   </Box>
                   {elem.description &&
                     (elem.description.length >= 50 ? (
-                      <div
-                        // className={classes.allText}
-                        data-full={elem.description}
-                      >
+                      <div data-full={elem.description}>
                         {`${String(elem.description).substr(0, 50)}...`}
                       </div>
                     ) : (
@@ -165,6 +164,8 @@ const Projects = () => {
           })}
         </Grid>
       </Container>
+      <ScrollToTopButton />
+      <Footer />
     </>
   );
 };
