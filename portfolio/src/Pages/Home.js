@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-import { Paper, Stack, Typography, Button } from "@mui/material";
+import { Paper, Stack, Typography } from "@mui/material";
 import { Container, Box } from "@mui/system";
 
 import Footer from "../Components/Footer";
@@ -15,35 +15,57 @@ const Home = () => {
       <Container
         maxWidth={"lg"}
         sx={{
-          backgroundColor: "#080808",
+          minHeight: "70vh",
           marginTop: "6em",
           marginBottom: {
             sm: "6em",
             xs: "8em",
           },
+          display: "flex",
+          alignItems: "center",
           padding: "1em 0",
-          borderRadius: 2,
         }}
       >
-        <Paper elevation={3} borderRadius={3}>
+        <Paper
+          elevation={3}
+          borderRadius={3}
+          sx={{
+            borderRadius: 2,
+            padding: "1em",
+            backgroundColor: "#fff",
+            transition: "all 1s ease-in-out",
+            "&:hover": {
+              backgroundColor: "#242424",
+            },
+            "&:hover .first-box": {
+              backgroundColor: "#f0f8ff",
+              boxShadow: "none",
+              color: "#000",
+              scale: "0.9",
+            },
+          }}
+        >
           <Stack
             direction={{ xs: "column-reverse", sm: "row" }}
             spacing={3}
-            sx={{ justifyContent: "space-between" }}
+            justifyContent={"space-between"}
           >
             <Box
+              className="first-box"
               sx={{
                 width: {
                   md: "50%",
                   xs: "100%",
-                  boxSizing: "border-box",
-                  backgroundColor: "#f2f2f2",
-                  color: "#000",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  padding: "2em 3em",
                 },
+                boxSizing: "border-box",
+                backgroundColor: "#343434",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                padding: "2em 3em",
+                boxShadow: "inset 0 0 6px #fff",
+                borderRadius: 2,
+                transition: "all 1s ease-in-out",
               }}
             >
               <Typography
@@ -56,7 +78,7 @@ const Home = () => {
                   },
                 }}
               >
-                Hi. I,m Harsh.
+                Hii. I'm Harsh.
               </Typography>
               <Typography
                 variant="subtitle1"
@@ -70,29 +92,23 @@ const Home = () => {
                 }}
               >
                 I'm a full stack web developer. Mostly I work with MERN-stack.
-                Have a look over my projects.
-              </Typography>
-              <Link to="/projects">
-                <Button size="small" variant="contained">
+                Have a look over my{" "}
+                <Link style={{ color: "#6200ee" }} to="/projects">
                   Projects
-                </Button>
-              </Link>
-              <Typography variant="subtitle1" sx={{ fontFamily: "inherit" }}>
-                Visit my full profile here.
+                </Link>
               </Typography>
-              <Link to="/details">
-                <Button size="small" variant="contained">
-                  Projects
-                </Button>
-              </Link>
               <Typography variant="subtitle1" sx={{ fontFamily: "inherit" }}>
-                If liking my work, then do contact me👋🏽
+                Visit my full profile{" "}
+                <Link style={{ color: "#6200ee" }} to="/details">
+                  here
+                </Link>
               </Typography>
-              <Link to="/projects">
-                <Button size="small" variant="contained">
-                  Contact me
-                </Button>
-              </Link>
+              <Typography variant="subtitle1" sx={{ fontFamily: "inherit" }}>
+                If liking my work, then do{" "}
+                <Link style={{ color: "#6200ee" }} to="/contact">
+                  contact me👋🏽
+                </Link>
+              </Typography>
             </Box>
             <Box
               sx={{
@@ -107,11 +123,9 @@ const Home = () => {
                 backgroundPosition: "center",
                 overflow: "hidden",
                 position: "relative",
+                borderRadius: 2,
                 "&:hover": {
                   backgroundColor: "#383838",
-                },
-                "&:hover img": {
-                  scale: "1.1",
                 },
               }}
             >
@@ -120,7 +134,7 @@ const Home = () => {
                 src="/images/profile-img.png"
                 sx={{
                   width: "100%",
-                  transition: "all 0.4s ease",
+                  transition: "all 0.4s ease-in-out",
                 }}
               ></Box>
             </Box>

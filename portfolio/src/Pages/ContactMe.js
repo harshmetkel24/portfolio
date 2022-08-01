@@ -13,7 +13,7 @@ import GraphemeSplitter from "grapheme-splitter";
 import Footer from "../Components/Footer";
 
 const list = [
-  "🙋🏽‍♂️ this side harshmetkel24",
+  "🙋🏽‍♂️ this is harshmetkel24",
   "Like My Work?",
   "Then do Contact Me👋🏽",
 ];

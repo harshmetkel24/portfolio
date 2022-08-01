@@ -64,7 +64,6 @@ const ProfileCard = () => {
               },
               background: "#343434",
               objectFit: "cover",
-              fontFamily: "inherit",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
               borderTopLeftRadius: 4,
