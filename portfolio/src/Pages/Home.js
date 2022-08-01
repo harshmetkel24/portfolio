@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
-import { Paper, Stack, Typography } from "@mui/material";
+import { Paper, Stack, Typography, Button } from "@mui/material";
 import { Container, Box } from "@mui/system";
 
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "Home | harshmetkel24";
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -42,6 +46,9 @@ const Home = () => {
               boxShadow: "none",
               color: "#000",
               scale: "0.9",
+            },
+            "&:hover button": {
+              color: "#333",
             },
           }}
         >
@@ -91,22 +98,26 @@ const Home = () => {
                   },
                 }}
               >
-                I'm a full stack web developer. Mostly I work with MERN-stack.
-                Have a look over my{" "}
-                <Link style={{ color: "#6200ee" }} to="/projects">
-                  Projects
-                </Link>
+                I'm a full stack web developer. Mostly I work with{" "}
+                <Typography sx={{ fontWeight: 600 }}>MERN-Stack.</Typography>
               </Typography>
               <Typography variant="subtitle1" sx={{ fontFamily: "inherit" }}>
-                Visit my full profile{" "}
-                <Link style={{ color: "#6200ee" }} to="/details">
-                  here
-                </Link>
+                I love to design personalised websites.
               </Typography>
               <Typography variant="subtitle1" sx={{ fontFamily: "inherit" }}>
-                If liking my work, then do{" "}
-                <Link style={{ color: "#6200ee" }} to="/contact">
-                  contact me👋🏽
+                If you liked my work and want to collaborate then get in touch
+                with me{" "}
+                <Link to="/contact">
+                  <Button
+                    size="small"
+                    sx={{
+                      fontWeight: 800,
+                      textTransform: "capitalize",
+                      marginBottom: "2px",
+                    }}
+                  >
+                    here
+                  </Button>
                 </Link>
               </Typography>
             </Box>
