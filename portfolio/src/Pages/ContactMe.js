@@ -78,7 +78,10 @@ const ContactMe = () => {
           minHeight: "80vh",
           backgroundColor: "#080808",
           marginTop: "6em",
-          marginBottom: "2em",
+          marginBottom: {
+            sm: "0",
+            xs: "8em",
+          },
           padding: "2em 0",
           borderRadius: 2,
           width: {

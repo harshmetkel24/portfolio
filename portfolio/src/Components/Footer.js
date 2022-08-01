@@ -24,7 +24,17 @@ const IconButtonStyle = {
 const Footer = () => {
   return (
     <>
-      <Paper elevation={0} sx={{ padding: "0.5em 0" }}>
+      <Paper
+        elevation={0}
+        sx={{
+          padding: "0.5em 0",
+          position: "absolute",
+          width: "95%",
+          bottom: "0.5em",
+          left: "50%",
+          transform: "translate(-50%, 0)",
+        }}
+      >
         <Box
           sx={{
             margin: "auto",
@@ -61,11 +71,6 @@ const Footer = () => {
               sx={{
                 ...IconStyle,
                 color: "#f09433",
-                // background:
-                //   "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
-                // WebkitBackgroundClip: "text",
-                // backgroundClip: "text",
-                // WebkitTextFillColor: "transparent",
               }}
             />
           </IconButton>

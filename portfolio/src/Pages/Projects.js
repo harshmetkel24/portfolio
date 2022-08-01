@@ -27,7 +27,10 @@ const Projects = () => {
           minHeight: "100vh",
           backgroundColor: "#080808",
           marginTop: "6em",
-          marginBottom: "2em",
+          marginBottom: {
+            sm: "6em",
+            xs: "8em",
+          },
           padding: "2em 0",
           borderRadius: 2,
           width: {

@@ -19,12 +19,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 const pages = [
   {
-    label: "Projects",
-    src: "/projects",
+    label: "Personal Details",
+    src: "/details",
   },
   {
-    label: "My Contributions",
-    src: "/contributions",
+    label: "Projects",
+    src: "/projects",
   },
   {
     label: "Contact Me",
