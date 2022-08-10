@@ -3,14 +3,15 @@ import React, { useState, useEffect } from "react";
 import { Container, Grid } from "@mui/material";
 
 import Navbar from "../Components/Navbar";
-// import ScrollToTopButton from "../Components/ScrollToTopButton";
+import ScrollToTopButton from "../Components/ScrollToTopButton";
 import Footer from "../Components/Footer";
 import ProjectsCard from "../Components/ProjectsCard";
 
 const Projects = () => {
   const [data, setData] = useState([]);
   const getData = async () => {
-    const res = await fetch("https://api.github.com/users/harshmetkel24/repos");
+    console.log(process.env.USER_NAME);
+    const res = await fetch(`https://api.github.com/users/harshmetkel24/repos`);
     setData(await res.json());
   };
   useEffect(() => {
@@ -44,7 +45,7 @@ const Projects = () => {
           })}
         </Grid>
       </Container>
-      {/* <ScrollToTopButton /> */}
+      <ScrollToTopButton />
       <Footer />
     </>
   );

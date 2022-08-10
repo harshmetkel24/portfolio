@@ -60,7 +60,7 @@ html {
   bottom: -0.5em;
   left: 8px;
   border: 8px solid transparent;
-  border-bottom: 8px solid #000;
+  border-bottom: 8px solid #333;
 }
 
 /* typerwriter cursur styling */

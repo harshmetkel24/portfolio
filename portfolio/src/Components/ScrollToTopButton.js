@@ -27,7 +27,16 @@ const ScrollToTopButton = () => {
     <>
       {visible && (
         <IconButton
-          sx={{ position: "fixed", right: "2em", bottom: "1em" }}
+          sx={{
+            display: {
+              md: "block",
+              xs: "none",
+            },
+            position: "fixed",
+            right: "2em",
+            bottom: "1em",
+            zIndex: 2,
+          }}
           onClick={scrollToTop}
         >
           <NavigationIcon sx={{ fontSize: "1.5em" }} />

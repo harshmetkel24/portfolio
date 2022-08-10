@@ -22,6 +22,40 @@ const Styles = {
       xs: "0.5em",
     },
   },
+  profileCardDetail: {
+    fontWeight: 700,
+    fontSize: {
+      md: "1.3em",
+      xs: "1.1em",
+    },
+    color: "#c0c0c0",
+    fontFamily: "inherit",
+  },
+  profileCardBox: {
+    mb: 1,
+    width: {
+      md: "30%",
+      xs: "100%",
+    },
+    background: "#343434",
+    objectFit: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    borderTopLeftRadius: 4,
+    borderBottomLeftRadius: 4,
+    borderTopRightRadius: {
+      md: 0,
+      xs: 4,
+    },
+    borderBottomRightRadius: {
+      md: 0,
+      xs: 4,
+    },
+    height: {
+      md: "320px",
+      xs: "fit-content",
+    },
+  },
   projectCardRow: {
     display: "flex",
     flexGrow: 1,

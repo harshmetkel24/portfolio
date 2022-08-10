@@ -99,7 +99,9 @@ const Home = () => {
                 }}
               >
                 I'm a full stack web developer. Mostly I work with{" "}
-                <Typography sx={{ fontWeight: 600 }}>MERN-Stack.</Typography>
+                <Typography sx={{ fontWeight: 600, fontFamily: "inherit" }}>
+                  MERN-Stack.
+                </Typography>
               </Typography>
               <Typography variant="subtitle1" sx={{ fontFamily: "inherit" }}>
                 I love to design personalised websites.
@@ -114,6 +116,7 @@ const Home = () => {
                       fontWeight: 800,
                       textTransform: "capitalize",
                       marginBottom: "2px",
+                      fontFamily: "inherit",
                     }}
                   >
                     here
