@@ -35,7 +35,7 @@ const ProjectsCard = ({ elem }) => {
           {elem.description &&
             (elem.description.length >= 50 ? (
               <div data-full={elem.description}>
-                {`${String(elem.description).substr(0, 50)}...`}
+                {`${String(elem.description).substring(0, 50)}...`}
               </div>
             ) : (
               <div className="normal">{elem.description}</div>

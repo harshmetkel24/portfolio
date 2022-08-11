@@ -110,6 +110,7 @@ const ContactMe = () => {
               autoStart: true,
               loop: true,
               pauseFor: "1500",
+              // graphemesplitter convert the multichar letters to single char
               stringSplitter: (str) => {
                 const splitter = new GraphemeSplitter();
                 return splitter.splitGraphemes(str);
@@ -130,7 +131,7 @@ const ContactMe = () => {
         >
           <FormControl
             component="form"
-            // onSubmit={sendEmail}
+            onSubmit={sendEmail}
             sx={{ width: "100%" }}
           >
             <TextField
@@ -173,17 +174,16 @@ const ContactMe = () => {
               value={mailerState.message}
               required
             />
+            <Button
+              type="submit"
+              color="success"
+              variant="contained"
+              sx={{ my: 2 }}
+              endIcon={<SendIcon />}
+            >
+              Send
+            </Button>
           </FormControl>
-          <Button
-            type="submit"
-            color="success"
-            variant="contained"
-            sx={{ my: 2 }}
-            endIcon={<SendIcon />}
-            onClick={sendEmail}
-          >
-            Send
-          </Button>
         </Box>
       </Container>
       <Footer />
