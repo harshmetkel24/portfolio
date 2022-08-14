@@ -127,7 +127,6 @@ const ProjectsCard = ({ elem }) => {
                 Live Project
               </Button>
             )}
-            {console.log(elem.homepage)}
           </Box>
         </Box>
       </Grid>

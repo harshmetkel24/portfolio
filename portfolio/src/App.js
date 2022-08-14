@@ -4,7 +4,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 // pages
 import PersonalDetails from "./Pages/PersonalDetails";
-import Projects from "./Pages/Projects";
+import { Projects } from "./Pages/Projects";
 import ContactMe from "./Pages/ContactMe";
 import Home from "./Pages/Home";
 

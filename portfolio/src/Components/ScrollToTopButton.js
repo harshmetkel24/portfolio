@@ -7,7 +7,6 @@ const ScrollToTopButton = () => {
   const [visible, setVisible] = useState(false);
   const toggleVisibility = () => {
     const scrolled = document.documentElement.scrollTop;
-    console.log(window.innerHeight, scrolled);
     if (scrolled > 300) {
       setVisible(true);
     } else {
