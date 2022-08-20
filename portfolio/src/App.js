@@ -1,4 +1,5 @@
 import "./App.css";
+import React, { useState, createContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
@@ -8,15 +9,30 @@ import { Projects } from "./Pages/Projects";
 import ContactMe from "./Pages/ContactMe";
 import Home from "./Pages/Home";
 
+// defining themes
+const lightTheme = createTheme({
+  palette: {
+    mode: "light",
+  },
+});
+
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
   },
 });
 
+const ThemeContext = createContext();
+
 function App() {
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
+  const changeTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+  };
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider
+      theme={isDarkTheme ? createTheme(darkTheme) : createTheme(lightTheme)}
+    >
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

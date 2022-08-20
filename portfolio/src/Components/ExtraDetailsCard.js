@@ -42,16 +42,18 @@ const ExtraDetailsCard = () => {
               flexWrap: "wrap",
             }}
           >
-            <HtmlIcon sx={{ fontSize: "3em", color: "#48d1cc", mx: 1 }} />
-            <CssIcon sx={{ fontSize: "3em", color: "#48d1cc", mx: 1 }} />
-            <JavascriptIcon sx={{ fontSize: "3em", color: "#48d1cc", mx: 1 }} />
-            <GitHubIcon
-              sx={{ fontSize: "1.5em", color: "#48d1cc", mx: 1, my: "auto" }}
-            />
             <img
               style={{ height: "1.5em", fill: "#fff", margin: "auto 0.5em" }}
               src="/images/ReactJSIcon.svg"
               alt="ReactJS"
+            />
+            <HtmlIcon sx={{ fontSize: "3em", color: "#48d1cc", mx: 1 }} />
+            <CssIcon sx={{ fontSize: "3em", color: "#48d1cc", mx: 1 }} />
+            <JavascriptIcon sx={{ fontSize: "3em", color: "#48d1cc", mx: 1 }} />
+            <img
+              style={{ height: "1.5em", fill: "#fff", margin: "auto 0.5em" }}
+              src="/images/reactNative.svg"
+              alt="ReactNative"
             />
             <img
               src="/images/NodeJSIcon.svg"
@@ -65,7 +67,10 @@ const ExtraDetailsCard = () => {
               style={{ height: "1.5em", margin: "auto 0.5em" }}
               src="/images/MongodbIcon.svg"
               alt="MongoDB"
-            />{" "}
+            />
+            <GitHubIcon
+              sx={{ fontSize: "1.5em", color: "#48d1cc", mx: 1, my: "auto" }}
+            />
             <img
               style={{ height: "1.3em", fill: "#fff", margin: "auto 0.5em" }}
               src="/images/bootstrap.svg"

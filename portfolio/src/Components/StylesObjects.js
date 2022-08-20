@@ -30,6 +30,7 @@ const Styles = {
     },
     color: "#c0c0c0",
     fontFamily: "inherit",
+    textTransform: "capitalize",
   },
   profileCardBox: {
     mb: 1,

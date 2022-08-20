@@ -96,12 +96,17 @@ const Home = () => {
                     sm: "0.8em",
                     md: "1.2em",
                   },
+                  textTransform: "capitalize",
                 }}
               >
-                I'm a full stack web developer. Mostly I work with{" "}
-                <Typography sx={{ fontWeight: 600, fontFamily: "inherit" }}>
+                I'm a full stack web developer and also{" "}
+                <span style={{ fontWeight: 600, fontFamily: "inherit" }}>
+                  REACT native
+                </span>{" "}
+                developer. Mostly I work with{" "}
+                <span style={{ fontWeight: 600, fontFamily: "inherit" }}>
                   MERN-Stack.
-                </Typography>
+                </span>
               </Typography>
               <Typography variant="subtitle1" sx={{ fontFamily: "inherit" }}>
                 I love to design personalised websites.

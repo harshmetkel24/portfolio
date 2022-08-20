@@ -18,7 +18,6 @@ export default function LanguageFilters() {
   const [languageSet, setLanguageSet] = useState(languages);
   useEffect(() => {
     // if there is matching data present then show that only or show entire data
-    console.log(allProjectsData);
     setData(
       languageSet.length
         ? data.filter((elem) => {

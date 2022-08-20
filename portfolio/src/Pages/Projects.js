@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createContext } from "react";
 
-import { Container, Grid, Box } from "@mui/material";
+import { Container, Grid, Box, Typography } from "@mui/material";
 
 import Navbar from "../Components/Navbar";
 import ScrollToTopButton from "../Components/ScrollToTopButton";
@@ -16,7 +16,9 @@ const Projects = () => {
   // all projects data
   const [allProjectsData, setAllProjectsData] = useState([]);
   const getData = () => {
-    fetch(`https://api.github.com/users/harshmetkel24/repos`)
+    fetch(
+      `https://api.github.com/users/harshmetkel24/repos?sort=created&direction=desc`
+    )
       .then((res) => res.json())
       .then((res) => {
         setData(res);
@@ -48,6 +50,16 @@ const Projects = () => {
             },
           }}
         >
+          <Typography
+            variant="subtitle2"
+            mx={2}
+            style={{
+              color: "#fff",
+              fontFamily: "inherit",
+            }}
+          >
+            * Note projects are mentioned in decreasing order of date created
+          </Typography>
           <LanguageFilters />
           <Grid container spacing={1}>
             {data.map((elem) => {
