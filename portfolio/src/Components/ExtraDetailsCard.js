@@ -65,6 +65,12 @@ const ExtraDetailsCard = () => {
             />
             <img
               style={{ height: "1.5em", margin: "auto 0.5em" }}
+              src="/images/postgresql.svg"
+              alt="PostgreSQL"
+            />
+
+            <img
+              style={{ height: "1.5em", margin: "auto 0.5em" }}
               src="/images/MongodbIcon.svg"
               alt="MongoDB"
             />
@@ -72,11 +78,18 @@ const ExtraDetailsCard = () => {
               sx={{ fontSize: "1.5em", color: "#48d1cc", mx: 1, my: "auto" }}
             />
             <img
+              style={{ height: "1.5em", margin: "auto 0.5em" }}
+              src="/images/sass.svg"
+              alt="SaSS"
+            />
+            <img
               style={{ height: "1.3em", fill: "#fff", margin: "auto 0.5em" }}
               src="/images/bootstrap.svg"
             />
           </Typography>
-          <Typography sx={Styles.rowText}>Problem Solving</Typography>
+          <Typography sx={{ ...Styles.rowText, mt: 1 }}>
+            Problem Solving
+          </Typography>
           <Typography sx={Styles.rowText}>
             Interpersonal Communications
           </Typography>

@@ -13,12 +13,12 @@ const details = [
     value:
       "Dhirubhai Ambani Institute of Information and Communication Technology",
   },
-  { key: "Degree: ", value: "Bachelors in Technology" },
+  { key: "Degree: ", value: "B.Tech ICT" },
   {
     key: "Course: ",
     value: "Information And Communications Technology",
   },
-  { key: "Club: ", value: "Accociate member of DSC-DAIICT" },
+  { key: "Club: ", value: "Deputy Convenor DSC-DAIICT" },
   { key: "Mobile: ", value: "8128662202" },
   {
     key: "Email: ",
