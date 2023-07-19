@@ -30,7 +30,6 @@ const Styles = {
     },
     color: "#c0c0c0",
     fontFamily: "inherit",
-    textTransform: "capitalize",
   },
   profileCardBox: {
     mb: 1,
@@ -63,7 +62,7 @@ const Styles = {
     fontSize: "0.9em",
     alignItems: "center",
   },
-  headingIcon: { fontSize: "1.5em", mx: 1, color: "#48d1cc" },
+  headingIcon: { fontSize: "1.5em", mx: 1, color: "#f49ac2" },
   headingText: {
     fontFamily: "inherit",
     fontWeight: 600,

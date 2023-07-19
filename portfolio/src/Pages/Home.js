@@ -56,6 +56,14 @@ const Home = () => {
             direction={{ xs: "column-reverse", sm: "row" }}
             spacing={3}
             justifyContent={"space-between"}
+            sx={{
+              height: {
+                lg: "400px",
+                sm: "100%",
+              },
+              fontFamily: "'Pacifico', cursive",
+              letterSpacing: "4px",
+            }}
           >
             <Box
               className="first-box"
@@ -64,6 +72,8 @@ const Home = () => {
                   md: "50%",
                   xs: "100%",
                 },
+                fontFamily: "inherit",
+                letterSpacing: "4px",
                 boxSizing: "border-box",
                 backgroundColor: "#343434",
                 display: "flex",
@@ -79,53 +89,60 @@ const Home = () => {
                 variant="h4"
                 sx={{
                   fontFamily: "inherit",
+                  letterSpacing: "4px",
                   fontSize: {
-                    xs: "2em",
-                    md: "2.5em",
+                    xs: "1.5em",
+                    md: "2em",
                   },
                 }}
               >
-                Hii. I'm Harsh.
+                Hello, I'm Harsh!
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{
+                  color: "#b666d2",
+                  fontFamily: "inherit",
+                  letterSpacing: "4px",
+                  fontSize: {
+                    xs: "1em",
+                    sm: "0.8em",
+                    md: "1em",
+                  },
+                }}
+              >
+                A passionate Full Stack Web and React Native Developer with a
+                strong affinity for the MERN stack
               </Typography>
               <Typography
                 variant="subtitle1"
                 sx={{
                   fontFamily: "inherit",
-                  fontSize: {
-                    xs: "1em",
-                    sm: "0.8em",
-                    md: "1.2em",
-                  },
-                  textTransform: "capitalize",
+                  letterSpacing: "4px",
+                  color: "#d473d4",
                 }}
               >
-                I'm a full stack web developer and also{" "}
-                <span style={{ fontWeight: 600, fontFamily: "inherit" }}>
-                  REACT native
-                </span>{" "}
-                developer. Mostly I work with{" "}
-                <span style={{ fontWeight: 600, fontFamily: "inherit" }}>
-                  MERN-Stack.
-                </span>
+                Crafting personalized websites is not just my profession; it's
+                my passion.
               </Typography>
-              <Typography variant="subtitle1" sx={{ fontFamily: "inherit" }}>
-                I love to design personalised websites.
-              </Typography>
-              <Typography variant="subtitle1" sx={{ fontFamily: "inherit" }}>
-                If you liked my work and want to collaborate then get in touch
-                with me{" "}
-                <Link to="/contact">
-                  <Button
-                    size="small"
-                    sx={{
-                      fontWeight: 800,
-                      textTransform: "capitalize",
-                      marginBottom: "2px",
-                      fontFamily: "inherit",
-                    }}
-                  >
-                    here
-                  </Button>
+              <Typography
+                variant="subtitle1"
+                sx={{
+                  color: "#c154c1",
+                  fontFamily: "inherit",
+                  letterSpacing: "4px",
+                }}
+              >
+                Reach out to collaborate or connect with me{" "}
+                <Link
+                  to="/contact"
+                  style={{
+                    color: "#ff1dce",
+                    fontFamily: "inherit",
+                    textDecoration: "none",
+                  }}
+                >
+                  here!
                 </Link>
               </Typography>
             </Box>

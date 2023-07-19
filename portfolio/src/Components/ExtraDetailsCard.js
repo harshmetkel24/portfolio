@@ -47,9 +47,9 @@ const ExtraDetailsCard = () => {
               src="/images/ReactJSIcon.svg"
               alt="ReactJS"
             />
-            <HtmlIcon sx={{ fontSize: "3em", color: "#48d1cc", mx: 1 }} />
-            <CssIcon sx={{ fontSize: "3em", color: "#48d1cc", mx: 1 }} />
-            <JavascriptIcon sx={{ fontSize: "3em", color: "#48d1cc", mx: 1 }} />
+            <HtmlIcon sx={{ fontSize: "3em", color: "#f49ac2", mx: 1 }} />
+            <CssIcon sx={{ fontSize: "3em", color: "#f49ac2", mx: 1 }} />
+            <JavascriptIcon sx={{ fontSize: "3em", color: "#f49ac2", mx: 1 }} />
             <img
               style={{ height: "1.5em", fill: "#fff", margin: "auto 0.5em" }}
               src="/images/reactNative.svg"
@@ -75,7 +75,7 @@ const ExtraDetailsCard = () => {
               alt="MongoDB"
             />
             <GitHubIcon
-              sx={{ fontSize: "1.5em", color: "#48d1cc", mx: 1, my: "auto" }}
+              sx={{ fontSize: "1.5em", color: "#f49ac2", mx: 1, my: "auto" }}
             />
             <img
               style={{ height: "1.5em", margin: "auto 0.5em" }}
@@ -103,7 +103,7 @@ const ExtraDetailsCard = () => {
             </Typography>
             <Typography sx={Styles.rowText}>
               Runners up in{" "}
-              <span style={{ color: "#48d1cc" }}>Winter Of Code 2020-21</span>
+              <span style={{ color: "#f49ac2" }}>Winter Of Code 2020-21</span>
             </Typography>
           </Box>
           <Box sx={{ p: 1 }}>

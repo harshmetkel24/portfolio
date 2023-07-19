@@ -5,6 +5,7 @@ import { Typography, Paper } from "@mui/material";
 
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import { Styles } from "./StylesObjects";
+import { Link } from "react-router-dom";
 
 const details = [
   { key: "Name: ", value: "Harshkumar Metkel" },
@@ -19,11 +20,11 @@ const details = [
     value: "Information And Communications Technology",
   },
   { key: "Club: ", value: "Deputy Convenor DSC-DAIICT" },
-  { key: "Mobile: ", value: "8128662202" },
   {
     key: "Email: ",
     value: "harshmetkel24@gmail.com",
   },
+  { key: "Leetcode: ", value: "https://leetcode.com/harshmetkel24/" },
 ];
 
 const ProfileCard = () => {
@@ -41,7 +42,7 @@ const ProfileCard = () => {
             fontFamily: "inherit",
           }}
         >
-          <AccountBoxIcon sx={{ mx: 1, color: "#48d1cc" }} />
+          <AccountBoxIcon sx={{ mx: 1, color: "#ff77ff" }} />
           Personal Details
         </Typography>
         <Container
@@ -102,7 +103,17 @@ const ProfileCard = () => {
                       width: "80%",
                     }}
                   >
-                    {detail.value}
+                    {detail.key === "Leetcode: " ? (
+                      <Link
+                        style={{ textDecoration: "none", color: "#add8e6" }}
+                        to={"/https://leetcode.com/harshmetkel24/"}
+                        target="_blank"
+                      >
+                        https://leetcode.com/harshmetkel24/{" "}
+                      </Link>
+                    ) : (
+                      detail.value
+                    )}
                   </Typography>
                 </Box>
               );

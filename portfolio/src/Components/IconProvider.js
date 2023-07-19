@@ -35,7 +35,7 @@ const IconProvider = ({ language }) => {
           <JavascriptIcon
             sx={{
               fontSize: "3em !important",
-              color: "#48d1cc!important",
+              color: "#ff77ff !important",
             }}
           />
         }
@@ -67,7 +67,7 @@ const IconProvider = ({ language }) => {
         label={language}
         icon={
           <HtmlIcon
-            sx={{ fontSize: "3em !important", color: "#48d1cc!important" }}
+            sx={{ fontSize: "3em !important", color: "#ff77ff !important" }}
           />
         }
       />
@@ -80,7 +80,7 @@ const IconProvider = ({ language }) => {
         label={language}
         icon={
           <CssIcon
-            sx={{ fontSize: "3em !important", color: "#48d1cc!important" }}
+            sx={{ fontSize: "3em !important", color: "#ff77ff !important" }}
           />
         }
       />

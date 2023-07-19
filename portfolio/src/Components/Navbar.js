@@ -1,8 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 
-import { makeStyles } from "@mui/styles/";
-
 import {
   AppBar,
   Box,
@@ -32,16 +30,7 @@ const pages = [
   },
 ];
 
-const useStyles = makeStyles((theme) => ({
-  menu: {
-    "& .MuiPaper-root": {
-      backgroundColor: "#444",
-    },
-  },
-}));
-
 const Navbar = () => {
-  const classes = useStyles();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -109,7 +98,6 @@ const Navbar = () => {
               <MenuIcon sx={{ color: "whitesmoke", ml: 0 }} />
             </IconButton>
             <Menu
-              className={classes.menu}
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -199,8 +187,8 @@ const Navbar = () => {
                   },
                   "&:hover": {
                     transform: "scale(1.1)",
-                    backgroundColor: "#e0ffff",
-                    boxShadow: "inset 0px 1px 16px 2px #00ffef",
+                    backgroundColor: "#ff77ff",
+                    boxShadow: "inset 0px 1px 16px 2px #f984ef",
                   },
                 }}
               >

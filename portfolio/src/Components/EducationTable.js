@@ -63,7 +63,7 @@ export default function EducationTable() {
           fontSize: { md: "2em", xs: "1.5em" },
         }}
       >
-        <SchoolIcon sx={{ mx: 1, color: "#48d1cc" }} />
+        <SchoolIcon sx={{ mx: 1, color: "#ff77ff " }} />
         Education Details
       </Typography>
       <TableContainer sx={{ maxHeight: 440 }}>

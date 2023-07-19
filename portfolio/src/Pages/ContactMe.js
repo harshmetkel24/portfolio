@@ -13,9 +13,10 @@ import GraphemeSplitter from "grapheme-splitter";
 import Footer from "../Components/Footer";
 
 const list = [
-  "🙋🏽‍♂️ This is harshmetkel24",
-  "Like My Work?",
-  "Then do Contact Me👋🏽",
+  "Welcome! I'm harshmetkel24👋🏽",
+  "Loving my work💙?",
+  "Don't hesitate to get in touch!💌",
+  "Contact me, and let's turn ideas into reality💡",
 ];
 
 const ContactMe = () => {
@@ -79,7 +80,7 @@ const ContactMe = () => {
           backgroundColor: "#080808",
           marginTop: "6em",
           marginBottom: {
-            sm: "0",
+            md: "6em",
             xs: "8em",
           },
           padding: "2em 0",

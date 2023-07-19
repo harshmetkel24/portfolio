@@ -25,7 +25,7 @@ const PersonalDetails = () => {
           backgroundColor: "#080808",
           marginTop: "6em",
           marginBottom: {
-            sm: "6em",
+            md: "6em",
             xs: "8em",
           },
           padding: "1em 0",

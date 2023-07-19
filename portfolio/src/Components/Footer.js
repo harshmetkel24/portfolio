@@ -85,7 +85,7 @@ const Footer = () => {
         <Stack
           direction="row"
           justifyContent="space-around"
-          sx={{ display: { xs: "flex", sm: "none", color: "#fff" } }}
+          sx={{ display: { xs: "flex", md: "none", color: "#fff" } }}
         >
           <Link to="/">
             <Button size="small" startIcon={<HomeIcon />}>
